@@ -1,1 +1,1 @@
-angular.module('AQAN', ['storyController']);
+angular.module('AQAN', ['storyController', 'rectCoordsFactory', 'sceneFactory']);

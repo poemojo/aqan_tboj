@@ -5,17 +5,27 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>A Quest About Nothing: the Blade of Justice</title>
 
-        <link rel="stylesheet" href="w3.css">
-        <link rel="stylesheet" href="w3-theme.css">
-        <link rel="stylesheet" href="style.css">
-        <script src="js/jquery/3.2.1.min.js"></script>
+        
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
 
-        <script src="main.js"></script>
+        <link rel="stylesheet" href="w3.css">
+        <link rel="stylesheet" href="w3-theme.css">
+        <link rel="stylesheet" href="style.css">
+
+        <script src="js/main.js"></script>
     </head>
-    <body class="w3-theme-l5">
+    <body ng-app="AQAN" ng-controller="MainController as main" ng-init="main.setScene(StoryScene.build(1, 'inc/intro.xml'))" class="w3-theme-l5">
+      <script src="js/jquery/3.2.1.min.js"></script>
       <script src="js/angular.min.js"></script>
+
+      <script src="js/app.js"></script>
+      <script src="js/app/story-controller.js"></script>
+      <script src="js/app/scene-factory.js"></script>
+
+      <script src="js/app/rect-coords-factory.js"></script>
+           
+      
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme-d4">
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
@@ -33,10 +43,9 @@
 
         </div>
 
-         <img class="image" src="scene1.jpg" alt="Amabo's Inn Room" usemap="#scenemap">
+         <img class="image" ng-src="main.scene.image" alt="Amabo's Inn Room" usemap="#scenemap">
          <map name="scenemap">
-            <area shape="rect" coords="500,285,566,312" id="wallet"  alt="Amabo's Wallet">
-            <area shape="rect" coords="721,324,818,355" id="warrant" alt="Official Warrant for the arrest of the Blade of Justice">
+            <area ng-repeat="coord in main.scene.coords" shape="rect" coords="{{coord.output()}}" id="{{coord.id}}" alt="{{coord.alt}}">
          </map>
 
 
@@ -44,41 +53,13 @@
             <div class="panel panel-default">
                <div class="panel-heading w3-theme">
                   <h3 class="panel-title">
-                     <a data-toggle="collapse" href="#sceneBody">{Scene Title Placeholder}</a>
+                     <a data-toggle="collapse" href="#sceneBody" ng-bind="main.scene.title"></a>
                   </h3>
                   </div>
                </div>
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
-               <div class="panel-body sceneTxt">
-               <h4>{Scene Body Text Placeholder}</h4>
-
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer augue ante, 
-               tincidunt sollicitudin lectus ultrices, dapibus dictum lorem. Donec ut ornare nibh. 
-               Praesent dapibus enim massa, dictum gravida arcu cursus eget. Nam purus tellus, 
-               vestibulum at ornare nec, porta sed ipsum. Aliquam lobortis convallis dui, 
-               vel egestas lorem consequat a. Sed nisi lorem, tempus vel semper et, mattis a purus. 
-               Sed malesuada egestas pretium. Cras vel velit nec eros finibus iaculis sed at sapien. 
-               Aenean interdum sagittis quam, sit amet blandit leo auctor id.</p>
-
-               <p>Maecenas nec tempor turpis. Integer sem tellus, vestibulum sit amet tortor in, viverra viverra eros. 
-               Sed gravida sodales lacus, venenatis ullamcorper libero. Donec imperdiet viverra tempor. 
-               Maecenas eget est id nisi egestas luctus. Nam vestibulum, odio a finibus blandit, 
-               ligula purus tincidunt mi, eu lobortis sem mi in ex. Sed non cursus nibh. 
-               Sed ullamcorper urna in fringilla dignissim. Suspendisse potenti. 
-               Duis vitae dolor sit amet dolor gravida lacinia. Sed in faucibus velit, a tempus dui.</p>
-
-               <p>Ut sit amet mi augue. Nulla eget mollis urna. Proin felis lectus, fringilla id viverra vitae, 
-               viverra vel ex. Aenean efficitur augue arcu, vel cursus nunc maximus at. Quisque posuere, 
-               tortor quis faucibus aliquam, ipsum quam accumsan turpis, eu semper lectus turpis id orci. 
-               Nulla facilisi. Donec in ullamcorper sem, vel maximus sapien. Curabitur scelerisque, 
-               orci et sollicitudin ultrices, odio nisl tempus lacus, id elementum purus sapien a quam.</p>
-
-               <p>In non vulputate diam. In lorem erat, malesuada vel elit non, accumsan interdum enim. Mauris sed nisi nunc. 
-               Donec vestibulum id nulla a placerat. Curabitur dapibus vel tortor sit amet rhoncus. 
-               Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. 
-               Quisque nec ornare nulla.</p>
-               </div>
+               <div class="panel-body sceneTxt" ng-bind-html="main.scene.body"></div>
                </div>
          </div>
 

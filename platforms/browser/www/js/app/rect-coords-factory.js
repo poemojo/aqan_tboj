@@ -1,12 +1,15 @@
-$(function()
+(function()
 {
 
 var rectCoordsFactory = angular.module('rectCoordsFactory', []);
 
-rectCoordsFactory.factory('RectCoords', [function(){
+rectCoordsFactory.factory('RectCoords', function(){
   
-   function RectCoords(x1, y1, x2, y2)
+   function RectCoords(id, alt, x1, y1, x2, y2)
    {
+      alert("Rect")
+      this.id = id;
+      this.alt = alt;
       this.x1 = x1;
       this.y1 = y1;
       this.x2 = x2;
@@ -24,6 +27,6 @@ rectCoordsFactory.factory('RectCoords', [function(){
    };
 
 
-}]);
-
 });
+
+})();

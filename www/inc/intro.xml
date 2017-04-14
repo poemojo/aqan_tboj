@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+<doc>
 <title>A Brand New Day</title>
 <body>
    <p>&quot;Thanks Amabo,&quot; the valet pocketed the generous tip, &quot;I ain’t gonna ask why it’s bloody…&quot;</p>
@@ -7,5 +9,6 @@
 </body>
 <img>img/scene1.jpg</img>
 
-<coords id="wallet" alt="Amabo's Wallet" type="rect" x1="500" y1="285" x2="566" y2="312" />
-<coords id="warrant" alt="Official Warrant for the arrest of the Blade of Justice" type="rect" x1="721" y1="324" x2="818" y2="355" />
+<coords id="wallet" alt="Amabo's Wallet" type="rect" x1="500" y1="285" x2="566" y2="312"></coords>
+<coords id="warrant" alt="Official Warrant for the arrest of the Blade of Justice" type="rect" x1="721" y1="324" x2="818" y2="355"></coords>
+</doc>

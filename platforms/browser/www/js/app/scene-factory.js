@@ -1,68 +1,55 @@
-$(function(){
+(function(){
 var sceneFactory = angular.module('sceneFactory', []);
 
-sceneFactory.factory('StoryScene', ['RectCoords', function(RectCoords)
+sceneFactory.factory('StoryScene',  function($http)
 {
-   function StoryScene(id, xmlFile)
+   function isJson(json)
    {
-      alert("Scene Construct");
+      try { JSON.parse(json); }
+      catch (e) { return false; }
+
+      return true;
+   }
+   function StoryScene(json)
+   {
       var scene = this;
-      scene.xmlFile = xmlFile;
-      var data = getFileContents(xmlFile),
-      xmlDoc = $.parseXML(data),
-      $xml = $(xmlDoc),
-      $title = $xml.find("title"),
-      $body = $xml.find("body"),
-      $image = $xml.find("img"),
-      $coords = $xml.find("coords");
-
-      scene.id = id;
-      scene.title = $title.text();
-      scene.body = $title.text();
-      scene.image = $image.text();
-
-      if ($coords !== undefined)
-      {
-         scene.coords = [];
-
-         $coords.each(function(index)
-         {
-
-            id = $(this).attr("id");
-            alt = $(this).attr("alt");
-            x1 = $(this).attr("x1");
-            y1 = $(this).attr("y1");
-            x2 = $(this).attr("x2");
-            y2 = $(this).attr("y2");
-
-            scene.coords.push(RectCoords.build(x1, y1, x2, y2));
-
-
-         });
-      }
-      else
-         scene.coords = null;
-
       scene.parent = null;
-      scene.children = null;
-   };
+      scene.children =[]; 
+
+      $http.get(json).success(function(response)
+      {
+         scene.id = response.id;
+         scene.title = response.title;
+         scene.body = response.body;
+         scene.image = response.img;
+         scene.coords = response.coords;
+      })
+      .error(function(err)
+      {
+         scene.id = 0;
+         scene.title = "Error!"
+         scene.body = err;
+         scene.image = null;
+         scene.coords = [];
+      });
+   }
 
 
-   StoryScene.prototype.pushChild = function(linkText, child)
+   StoryScene.prototype.pushChild = function(linkText, child, msg)
    {
-         this.children.push({text: linkText, data: child});
-         return this;
+      this. children.push({text: linkText, data: child, message: msg});
+      return this;
    };
 
 
 
    return {
-      build: function(id, xmlFile)
+      build: function(filename)
       {
-         return new StoryScene(id, xmlFile);
+         return new StoryScene(filename);
       }
    };
 
 
-}]);
 });
+})();

@@ -22,8 +22,6 @@ $(function(){
          inventory.money = 250;
          alert("Found Wallet!");
       }
-      
-
    });
 
    $("#warrant").click(function(){

@@ -5,27 +5,22 @@
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
         <title>A Quest About Nothing: the Blade of Justice</title>
 
-        
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="css/w3-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery/3.2.1.min.js"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
 
-        <link rel="stylesheet" href="w3.css">
-        <link rel="stylesheet" href="w3-theme.css">
-        <link rel="stylesheet" href="style.css">
-
-        <script src="js/main.js"></script>
-    </head>
-    <body ng-app="AQAN" ng-controller="MainController as main" ng-init="main.setScene(StoryScene.build(1, 'inc/intro.xml'))" class="w3-theme-l5">
-      <script src="js/jquery/3.2.1.min.js"></script>
+    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.setScene('inc/intro.json')">
       <script src="js/angular.min.js"></script>
-
+      <script src="js/angular-sanitize.min.js"></script>
+      <script src="js/angular-cookies.min.js"></script>
       <script src="js/app.js"></script>
       <script src="js/app/story-controller.js"></script>
       <script src="js/app/scene-factory.js"></script>
-
       <script src="js/app/rect-coords-factory.js"></script>
-           
-      
+    
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme-d4">
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
@@ -36,16 +31,16 @@
          <div id="inv-pnl" class="panel panel-primary">
             <div class="container">
             <div class="row">
-               <div class="col-xs-4" id="inv-warrant">Warrant</div>
-               <div class="col-xs-4" id="inv-wallet">Wallet</div>
+              <div class="col-xs-4" ng-show="main.inventory.warrant">Wallet</div>
+               <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
             </div>
             </div>
 
         </div>
 
-         <img class="image" ng-src="main.scene.image" alt="Amabo's Inn Room" usemap="#scenemap">
+         <img class="image" ng-src="{{main.scene.image}}" alt="Amabo's Inn Room" usemap="#scenemap">
          <map name="scenemap">
-            <area ng-repeat="coord in main.scene.coords" shape="rect" coords="{{coord.output()}}" id="{{coord.id}}" alt="{{coord.alt}}">
+            <area ng-click="main.getItem('{{coords.id}}')" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
          </map>
 
 
@@ -63,5 +58,6 @@
                </div>
          </div>
 
+         <script src="js/main.js"></script>
     </body>
 </html>

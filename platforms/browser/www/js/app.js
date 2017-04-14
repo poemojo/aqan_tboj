@@ -1,1 +1,1 @@
-angular.module('AQAN', ['storyController', 'rectCoordsFactory', 'sceneFactory']);
+angular.module('aqan', ['ngSanitize', 'ngCookies', 'storyController', 'rectCoordsFactory', 'sceneFactory']);

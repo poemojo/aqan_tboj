@@ -54,7 +54,9 @@
                </div>
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
-               <div class="panel-body sceneTxt" ng-bind-html="main.scene.body"></div>
+               <div class="panel-body sceneTxt">
+                  <p ng-repeat="para in main.scene.body" ng-bind-html="para"></p>
+               </div>
                </div>
          </div>
 

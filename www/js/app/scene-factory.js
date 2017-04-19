@@ -1,7 +1,7 @@
 (function(){
 var sceneFactory = angular.module('sceneFactory', []);
 
-sceneFactory.factory('StoryScene', function()
+sceneFactory.factory('StoryScene',  function($http)
 {
    function isJson(json)
    {
@@ -10,19 +10,13 @@ sceneFactory.factory('StoryScene', function()
 
       return true;
    }
-
-   var sprintf = function()
+   function StoryScene(json)
    {
-<<<<<<< HEAD
       var scene = this;
       scene.parent = null;
-=======
-      var fmt_str = arguments[0];
->>>>>>> master
 
-      for (var i=1;i<arguments.length;i++)
+      $http.get(json).success(function(response)
       {
-<<<<<<< HEAD
          scene.id = response.id;
          scene.title = response.title;
          scene.body = response.body;
@@ -43,55 +37,8 @@ sceneFactory.factory('StoryScene', function()
 
       });
    }
-=======
-         var search = new RegExp("\\{"+(i-1)+"\\}","gm");
->>>>>>> master
 
-         fmt_str = fmt_str.replace(search, arguments[i]);
-      }
 
-      return(fmt_str);
-   };
-
-<<<<<<< HEAD
-=======
-   var rand_int = function(min, max)
-   {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-
-      return Math.floor(Math.random()*(max-min))+min;
-   };
-  
-   function StoryScene(response)
-   {
-      var scene = this;
-      scene.id = response.id;
-      scene.title = response.title;
-      scene.body = response.body;
-      scene.message = response.msg;
-      scene.image = response.img;
-      scene.coords = response.coords;
-      scene.children = response.children;
-   }
-
-   StoryScene.prototype.save = function()
-   {
-      var scene = this;
-      var response = {
-         id: scene.id,
-         title: scene.title,
-         body: scene.body,
-         msg: scene.message,
-         img: scene.image,
-         coords: scene.coords,
-         children: scene.children
-      };
-
-      return JSON.stringify(response);
-   };
-
->>>>>>> master
 
    return {
       build: function(filename)

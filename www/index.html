@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
 
-    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
+    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.setScene('inc/intro.json')">
       <script src="js/angular.min.js"></script>
       <script src="js/angular-sanitize.min.js"></script>
       <script src="js/angular-cookies.min.js"></script>
@@ -26,23 +26,21 @@
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
          </header>
 
-        <button class="w3-btn w3-theme text-center" ng-click="main.toggleInventory" id="inv-btn">Inventory</button>
+        <button class="w3-btn w3-theme text-center" id="inv-btn">Inventory</button>
 
          <div id="inv-pnl" class="panel panel-primary">
             <div class="container">
             <div class="row">
-              <div class="col-xs-4" ng-show="main.inventory.warrant">Warrant</div>
-              <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
+              <div class="col-xs-4" ng-show="main.inventory.warrant">Wallet</div>
+               <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
             </div>
             </div>
 
         </div>
 
-        <button class="w3-button b3-btn w3-theme-d4 text-center" id="adv-btn">Advance Scene</button>
-
          <img class="image" ng-src="{{main.scene.image}}" alt="Amabo's Inn Room" usemap="#scenemap">
          <map name="scenemap">
-            <area ng-click="main.getItem(coords.id)" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
+            <area ng-click="main.getItem('{{coords.id}}')" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
          </map>
 
 

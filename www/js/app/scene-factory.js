@@ -14,7 +14,6 @@ sceneFactory.factory('StoryScene',  function($http)
    {
       var scene = this;
       scene.parent = null;
-      scene.children =[]; 
 
       $http.get(json).success(function(response)
       {
@@ -23,6 +22,8 @@ sceneFactory.factory('StoryScene',  function($http)
          scene.body = response.body;
          scene.image = response.img;
          scene.coords = response.coords;
+         scene.children = response.children;
+         scene.message = response.msg;
       })
       .error(function(err)
       {
@@ -31,15 +32,11 @@ sceneFactory.factory('StoryScene',  function($http)
          scene.body = err;
          scene.image = null;
          scene.coords = [];
+         scene.children = [];
+         scene.message = "";
+
       });
    }
-
-
-   StoryScene.prototype.pushChild = function(linkText, child, msg)
-   {
-      this. children.push({text: linkText, data: child, message: msg});
-      return this;
-   };
 
 
 

@@ -26,8 +26,8 @@
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
          </header>
 
-        <button class="w3-btn w3-theme text-center" id="inv-btn">Inventory</button>
-        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.toggleAdvance()">Advance</button>
+        <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
+        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
 
         <div  id="adv-pnl" class="panel panel-primary" ng-show="main.showAdvance">
           <button ng-repeat="child in main.scene.children" ng-click="main.setScene(child.id)" class="w3-button w3-btn w3-theme-l3 text-center" ng-bind-html="child.prompt"></button>
@@ -64,6 +64,5 @@
                </div>
          </div>
 
-         <script src="js/main.js"></script>
     </body>
 </html>

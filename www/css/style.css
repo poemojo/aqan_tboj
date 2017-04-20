@@ -21,14 +21,24 @@ header[role='banner']
    height:150px;
 }
 
-div#inv-pnl, div#adv-pnl
+div#inv-pnl
 {
    position:fixed;
    top:220px;
-   right:15px;
+   left:15px;
    width:300px;
    height:200px;
 }
+
+div#adv-pnl
+{
+   position:fixed;
+   top:440px;
+   left:15px;
+   width:300px;
+   height:200px;
+}
+
 button#inv-btn
 {
    position: fixed;

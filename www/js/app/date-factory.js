@@ -60,4 +60,4 @@ dateFactory.factory('ExDate', function(){
 
    return function build(time)
    { return new ExDate(time); }
-});
+ });

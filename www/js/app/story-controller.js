@@ -14,6 +14,7 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
       money: 0
    };
 
+   ctrl.showAdvance = false;
    ctrl.scene = null;
    ctrl.outputCoords = function(coords)
    { return ""+coords.x1+","+coords.y1+","+coords.x2+","+coords.y2;} 
@@ -29,7 +30,7 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
       ctrl.scene = StoryScene.build(filename);
 
 
-   }
+   };
 
    ctrl.getItem = function(id)
    {
@@ -53,6 +54,11 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
       }
 
       $cookies.put("aqan-tboj-inventory", JSON.stringify(ctrl.inventory));
+   };
+
+   ctrl.toggleAdvance = function()
+   {
+      ctrl.showAdvance = !ctrl.showAdvance;
    };
 }]);
 })();

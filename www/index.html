@@ -19,30 +19,32 @@
       <script src="js/app.js"></script>
       <script src="js/app/story-controller.js"></script>
       <script src="js/app/scene-factory.js"></script>
-      <script src="js/app/rect-coords-factory.js"></script>
+      <script src="js/app/date-factory.js"></script>
     
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme-d4">
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
          </header>
 
-        <button class="w3-btn w3-theme text-center" ng-click="main.toggleInventory" id="inv-btn">Inventory</button>
+        <button class="w3-btn w3-theme text-center" id="inv-btn">Inventory</button>
+        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.toggleAdvance()">Advance</button>
 
+        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.showAdvance">
+          <button ng-repeat="child in main.scene.children" ng-click="main.setScene(child.id)" class="w3-button w3-btn w3-theme-l3 text-center" ng-bind-html="child.prompt"></button>
+          </div>
          <div id="inv-pnl" class="panel panel-primary">
             <div class="container">
             <div class="row">
-              <div class="col-xs-4" ng-show="main.inventory.warrant">Warrant</div>
-              <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
+              <div class="col-xs-4" ng-show="main.inventory.warrant">Wallet</div>
+               <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
             </div>
             </div>
 
         </div>
 
-        <button class="w3-button b3-btn w3-theme-d4 text-center" id="adv-btn">Advance Scene</button>
-
          <img class="image" ng-src="{{main.scene.image}}" alt="Amabo's Inn Room" usemap="#scenemap">
          <map name="scenemap">
-            <area ng-click="main.getItem(coords.id)" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
+            <area ng-click="main.getItem('{{coords.id}}')" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
          </map>
 
 
@@ -56,7 +58,9 @@
                </div>
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
-               <div class="panel-body sceneTxt" ng-bind-html="main.scene.body"></div>
+               <div class="panel-body sceneTxt">
+                  <p ng-repeat="p in main.scene.body" ng-bind-html="p"></p>
+               </div>
                </div>
          </div>
 

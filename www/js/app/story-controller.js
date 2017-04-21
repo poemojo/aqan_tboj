@@ -14,6 +14,7 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
       money: 0
    };
 
+   ctrl.showAdvance = false;
    ctrl.scene = null;
 
    ctrl.initialize = function()
@@ -60,6 +61,11 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
       }
 
       $cookies.put("aqan-tboj-inventory", JSON.stringify(ctrl.inventory));
+   };
+
+   ctrl.toggleAdvance = function()
+   {
+      ctrl.showAdvance = !ctrl.showAdvance;
    };
 }]);
 })();

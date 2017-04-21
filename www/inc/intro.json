@@ -1,5 +1,5 @@
-[{
-   "id": 1,
+{
+   "id": "1",
    "title": "A Brand New Day",
    "body":[
       "&quot;Thanks Amabo,&quot; the valet pocketed the generous tip, &quot;I ain’t gonna ask why it’s bloody...&quot;",
@@ -8,7 +8,7 @@
    ],
    "msg": "began his day like anyother.",
 
-   "img": "img/scene1.jpg",
+   "img": "img/scene1.png",
    "coords": [
       {
          "x1":500 , "y1":285, "x2":566, "y2":312,
@@ -25,78 +25,8 @@
       {
          "prompt": "Go Downstairs",
          "item": null,
-         "id": 2,
+         "id": "inc/scene2.json",
          "msg": null
       }
    ]
-},
-{
-   "id": 2,
-   "title": "Starting Your Day",
-   "body": [
-      "Amabo walked down to the front desk and leaned heavily on the counter.",
-      "&quot;You look like shit, Karrab, rough night?&quot; the desk clerk said in greeting.",
-      "&quot;I feel like shit, Jeremy, is Soren in yet?&quot; Amabo ignored the inquiry about his nighttime debauchery.",
-      "&quot;I’m here, Amabo…&quot; Soren, the owner of the inn stepped out of the office behind the desk, &quot;You look like shit. You have my rent money yet?&quot;",
-      "Amabo shrugged, &quot;After the next job I’ll have the back rent I owe you, plus an advance for the next few weeks, there’s still a lot of work for me here in town,&quot; Amabo leaned closer to Soren, &quot;I’ll also have a little extra, just for you.&quot;",
-      "&quot;Thanks Amabo,&quot; Soren said.",
-      "Having taken care of business, Amabo stepped outside and looked up and down the street. He stretched wide, loosening his taught muscles. It was time to start the day, but what on earth was he going to do now?"
-   ],
-   "msg": "handled his business with the owner of the inn, then went outside.",
-
-   "img": "img/scene2.png",
-   "coords": null,
-   "children": [
-      {
-         "prompt": "Head to the Warehouse District",
-         "item": "warrant",
-         "id": 3,
-         "msg": "decided to start his investigation in the Warehouse Disctrict."
-      },
-      {
-         "prompt": "Head to the Red Light District",
-         "item": "warrant",
-         "id": 4,
-         "msg": "decided to start his investigation in the Red Light District."
-      },
-      {
-         "prompt": "&quot;I don't feel like working today...&quot;",
-         "item": null,
-         "id": 12,
-         "msg": "decided he didn't want to to work."
-      }
-   ]
-},
-{
-   "id": 3,
-   "title": "The Warehouse District",
-   "body": [
-      "Amabo decided he’d start his hunt for the rogue vigilante, the Blade of Justice, in the warehouse district. As he moved towards the outer wall of the city the wealth and regality of Riverside became less and less evident. Eventually he found himself surrounded by plain rectangular buildings, and knew that he had arrived. He immediately spotted signs of a struggle. There was a large pile of damaged crates and a great deal of blood around Warehouse 202. There seemed to also be an broken window in the guard box of the same warehouse. The amount of property damage in evidence was obscene, clearly this Blade character was not kidding around.",
-      "&quot;You just had to accept this warrant... Thanks Amabo...&quot; the bounty hunter said to himself.",
-      "Amabo knew this warehouse held goods for a shipping concern in the city, the docks seemed like a likely next place to investigate, but perhaps there were other clues to be found here at the warehouse."
-   ],
-   "msg": "handled his business with the owner of the inn, then went outside.",
-
-   "img": "img/scene2.png",
-   "coords": null,
-   "children": [
-      {
-         "prompt": "Head to the Warehouse District",
-         "item": "warrant",
-         "id": 3,
-         "msg": "decided to start his investigation in the Warehouse Disctrict."
-      },
-      {
-         "prompt": "Head to the Red Light District",
-         "item": "warrant",
-         "id": 4,
-         "msg": "decided to start his investigation in the Red Light District."
-      },
-      {
-         "prompt": "&quot;I don't feel like working today...&quot;",
-         "item": null,
-         "id": 12,
-         "msg": "decided he didn't want to to work."
-      }
-   ]
-}]
+}

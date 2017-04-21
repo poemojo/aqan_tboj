@@ -19,23 +19,15 @@
       <script src="js/app.js"></script>
       <script src="js/app/story-controller.js"></script>
       <script src="js/app/scene-factory.js"></script>
-      <script src="js/app/date-factory.js"></script>
+      <script src="js/app/rect-coords-factory.js"></script>
     
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme-d4">
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
          </header>
 
-<<<<<<< HEAD
         <button class="w3-btn w3-theme text-center" ng-click="main.toggleInventory" id="inv-btn">Inventory</button>
-=======
-        <button class="w3-btn w3-theme text-center" id="inv-btn">Inventory</button>
-        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.toggleAdvance()">Advance</button>
->>>>>>> 183807c0e853d052ee00bec03c6e58d6f3bb4d33
 
-        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.showAdvance">
-          <button ng-repeat="child in main.scene.children" ng-click="main.setScene(child.id)" class="w3-button w3-btn w3-theme-l3 text-center" ng-bind-html="child.prompt"></button>
-          </div>
          <div id="inv-pnl" class="panel panel-primary">
             <div class="container">
             <div class="row">
@@ -64,9 +56,7 @@
                </div>
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
-               <div class="panel-body sceneTxt">
-                  <p ng-repeat="p in main.scene.body" ng-bind-html="p"></p>
-               </div>
+               <div class="panel-body sceneTxt" ng-bind-html="main.scene.body"></div>
                </div>
          </div>
 

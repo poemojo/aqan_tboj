@@ -19,7 +19,7 @@
       <script src="js/app.js"></script>
       <script src="js/app/story-controller.js"></script>
       <script src="js/app/scene-factory.js"></script>
-      <script src="js/app/date-factory.js"></script>
+      <script src="js/app/rect-coords-factory.js"></script>
     
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme-d4">
@@ -54,9 +54,7 @@
                </div>
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
-               <div class="panel-body sceneTxt">
-                  <p ng-repeat="p in main.scene.body" ng-bind-html="p"></p>
-               </div>
+               <div class="panel-body sceneTxt" ng-bind-html="main.scene.body"></div>
                </div>
          </div>
 

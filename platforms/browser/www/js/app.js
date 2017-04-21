@@ -1,1 +1,1 @@
-angular.module('aqan', ['ngSanitize', 'ngCookies', 'storyController', 'sceneFactory', 'dateFactory']);
+angular.module('aqan', ['ngSanitize', 'ngCookies', 'storyController', 'rectCoordsFactory', 'sceneFactory']);

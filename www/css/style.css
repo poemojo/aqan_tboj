@@ -21,7 +21,7 @@ header[role='banner']
    height:150px;
 }
 
-div#inv-pnl, div#adv-pnl
+div#inv-pnl
 {
    position:fixed;
    top:220px;
@@ -33,13 +33,6 @@ button#inv-btn
 {
    position: fixed;
    top: 165px;
-   right:15px;
-}
-
-button#adv-btn
-{
-   position: fixed;
-   top: 215px;
    right:15px;
 }
 

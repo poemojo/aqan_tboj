@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 [{
    "id": 1,
-=======
-{
-   "id": "1",
->>>>>>> 183807c0e853d052ee00bec03c6e58d6f3bb4d33
    "title": "A Brand New Day",
    "body":[
       "&quot;Thanks Amabo,&quot; the valet pocketed the generous tip, &quot;I ain’t gonna ask why it’s bloody...&quot;",
@@ -13,7 +8,7 @@
    ],
    "msg": "began his day like anyother.",
 
-   "img": "img/scene1.png",
+   "img": "img/scene1.jpg",
    "coords": [
       {
          "x1":500 , "y1":285, "x2":566, "y2":312,
@@ -24,7 +19,6 @@
          "x1":721 , "y1":324, "x2":818, "y2":355,
          "id":"warrant", "alt":"Official Warrant for the arrest of the Blade of Justice",
          "msg": "didn't forget the warrant!"
-<<<<<<< HEAD
       }
    ],
    "children": [
@@ -70,8 +64,6 @@
          "item": null,
          "id": 12,
          "msg": "decided he didn't want to to work."
-=======
->>>>>>> 183807c0e853d052ee00bec03c6e58d6f3bb4d33
       }
    ]
 },
@@ -83,7 +75,6 @@
       "&quot;You just had to accept this warrant... Thanks Amabo...&quot; the bounty hunter said to himself.",
       "Amabo knew this warehouse held goods for a shipping concern in the city, the docks seemed like a likely next place to investigate, but perhaps there were other clues to be found here at the warehouse."
    ],
-<<<<<<< HEAD
    "msg": "handled his business with the owner of the inn, then went outside.",
 
    "img": "img/scene2.png",
@@ -109,14 +100,3 @@
       }
    ]
 }]
-=======
-   "children": [
-      {
-         "prompt": "Go Downstairs",
-         "item": null,
-         "id": "inc/scene2.json",
-         "msg": null
-      }
-   ]
-}
->>>>>>> 183807c0e853d052ee00bec03c6e58d6f3bb4d33

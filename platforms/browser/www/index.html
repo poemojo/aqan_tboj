@@ -27,7 +27,11 @@
          </header>
 
         <button class="w3-btn w3-theme text-center" id="inv-btn">Inventory</button>
+        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.toggleAdvance()">Advance</button>
 
+        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.showAdvance">
+          <button ng-repeat="child in main.scene.children" ng-click="main.setScene(child.id)" class="w3-button w3-btn w3-theme-l3 text-center" ng-bind-html="child.prompt"></button>
+          </div>
          <div id="inv-pnl" class="panel panel-primary">
             <div class="container">
             <div class="row">

@@ -1,0 +1,52 @@
+.footer
+{
+   position: fixed;
+   bottom:0;
+   left:15px;
+   right:15px;
+}
+
+.sceneTxt
+{
+   height:300px;
+   overflow:scroll;
+}
+
+header[role='banner']
+{
+   position:fixed;
+   top:0;
+   left:0;
+   right:0;
+   height:150px;
+}
+
+div#inv-pnl, div#adv-pnl
+{
+   position:fixed;
+   top:220px;
+   right:15px;
+   width:300px;
+   height:200px;
+}
+button#inv-btn
+{
+   position: fixed;
+   top: 165px;
+   right:15px;
+}
+
+button#adv-btn
+{
+   position: fixed;
+   top: 215px;
+   right:15px;
+}
+
+img.image
+{
+   margin:150px auto 0 auto;
+   display:block;
+   width:1320px;
+   height:540px;
+}

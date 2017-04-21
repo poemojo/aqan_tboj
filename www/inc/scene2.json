@@ -1,0 +1,37 @@
+{
+   "id": "2",
+   "title": "Starting Your Day",
+   "body": [
+      "Amabo walked down to the front desk and leaned heavily on the counter.",
+      "&quot;You look like shit, Karrab, rough night?&quot; the desk clerk said in greeting.",
+      "&quot;I feel like shit, Jeremy, is Soren in yet?&quot; Amabo ignored the inquiry about his nighttime debauchery.",
+      "&quot;I’m here, Amabo…&quot; Soren, the owner of the inn stepped out of the office behind the desk, &quot;You look like shit. You have my rent money yet?&quot;",
+      "Amabo shrugged, &quot;After the next job I’ll have the back rent I owe you, plus an advance for the next few weeks, there’s still a lot of work for me here in town,&quot; Amabo leaned closer to Soren, &quot;I’ll also have a little extra, just for you.&quot;",
+      "&quot;Thanks Amabo,&quot; Soren said.",
+      "Having taken care of business, Amabo stepped outside and looked up and down the street. He stretched wide, loosening his taught muscles. It was time to start the day, but what on earth was he going to do now?"
+   ],
+   "msg": "handled his business with the owner of the inn, then went outside.",
+
+   "img": "img/scene2.png",
+   "coords": [],
+   "children": [
+      {
+         "prompt": "Head to the Warehouse District",
+         "item": "warrant",
+         "id": "inc/scene3.json",
+         "msg": "decided to start his investigation in the Warehouse Disctrict."
+      },
+      {
+         "prompt": "Head to the Red Light District",
+         "item": "warrant",
+         "id": "inc/scene4.json",
+         "msg": "decided to start his investigation in the Red Light District."
+      },
+      {
+         "prompt": "&quot;I don't feel like working today...&quot;",
+         "item": null,
+         "id": "inc/scene12.json",
+         "msg": "decided he didn't want to to work."
+      }
+   ]
+}

@@ -121,6 +121,7 @@ sceneFactory.factory('StoryScene',  ['$http', '$cookies', 'ExDate', function($ht
       this.message += m;
    };
 
+   
    return {
       build: function(filename)
       {

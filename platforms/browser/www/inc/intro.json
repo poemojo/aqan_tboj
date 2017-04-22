@@ -9,7 +9,7 @@
    "msg": "began his day like anyother.",
 
    "img": "img/scene1.png",
-   "coords": [
+   "items": [
       {
          "x1":500 , "y1":285, "x2":566, "y2":312,
          "id":"wallet", "alt":"Amabo's Wallet.",

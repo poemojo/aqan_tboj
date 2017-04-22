@@ -22,21 +22,25 @@
       <script src="js/app/date-factory.js"></script>
     
       <script type="text/javascript" src="cordova.js"></script>
-         <header role="banner" class="w3-theme-d4">
+         <header role="banner" class="w3-theme">
+         <section class="container">
          <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
+         </section>
          </header>
 
         <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
         <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
 
-        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.showAdvance">
-          <button ng-repeat="child in main.scene.children" ng-click="main.setScene(child.id)" class="w3-button w3-btn w3-theme-l3 text-center" ng-bind-html="child.prompt"></button>
+        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.show.advance">
+          <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center"
+                  ng-class="main.setChildClass(child.item)" ng-bind-html="main.setChildPrompt(child)" style="display:block; width:298px;">
+          </button>
           </div>
-         <div id="inv-pnl" class="panel panel-primary">
-            <div class="container">
+
+         <div id="inv-pnl" class="panel panel-primary" ng-show="main.show.inventory">
+            <div class="container" style="width:300px !important;">
             <div class="row">
-              <div class="col-xs-4" ng-show="main.inventory.warrant">Wallet</div>
-               <div class="col-xs-4" ng-show="main.inventory.wallet">Wallet</div>
+              <div class="col-xs-4" ng-repeat="(item, value) in main.inventory" ng-show="value" ng-bind="item"></div>
             </div>
             </div>
 
@@ -44,7 +48,7 @@
 
          <img class="image" ng-src="{{main.scene.image}}" alt="Amabo's Inn Room" usemap="#scenemap">
          <map name="scenemap">
-            <area ng-click="main.getItem('{{coords.id}}')" href="#{{coords.id}}"  ng-repeat="coords in main.scene.coords" shape="rect" coords="{{main.outputCoords(coords)}}" id="{{coords.id}}" alt="{{coords.alt}}">
+            <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item.id)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
          </map>
 
 

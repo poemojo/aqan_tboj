@@ -13,7 +13,7 @@
    "msg": "handled his business with the owner of the inn, then went outside.",
 
    "img": "img/scene2.png",
-   "coords": [],
+   "items": [],
    "children": [
       {
          "prompt": "Head to the Warehouse District",

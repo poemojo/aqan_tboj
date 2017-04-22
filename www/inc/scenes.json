@@ -1,39 +1,7 @@
 [
+,
 {
-   "id": "3",
-   "title": "The Warehouse District",
-   "body": [
-      "Amabo decided he’d start his hunt for the rogue vigilante, the Blade of Justice, in the warehouse district. As he moved towards the outer wall of the city the wealth and regality of Riverside became less and less evident. Eventually he found himself surrounded by plain rectangular buildings, and knew that he had arrived. He immediately spotted signs of a struggle. There was a large pile of damaged crates and a great deal of blood around Warehouse 202. There seemed to also be an broken window in the guard box of the same warehouse. The amount of property damage in evidence was obscene, clearly this Blade character was not kidding around.",
-      "&quot;You just had to accept this warrant... Thanks Amabo...&quot; the bounty hunter said to himself.",
-      "Amabo knew this warehouse held goods for a shipping concern in the city, the docks seemed like a likely next place to investigate, but perhaps there were other clues to be found here at the warehouse."
-   ],
-   "msg": "entered the Warehouse District.",
-
-   "img": "img/scene3.png",
-   "coords": [
-      {
-         "x1":372, "y1":302, "x2":412, "y2":332,
-         "id": "cigar", "alt": "A ruined highend cigar covered in blood.",
-         "msg": "picked up a bloody, highend cigar. The brand is a favorite among influential money people."
-      }
-   ],
-   "children": [
-      {
-         "prompt": "Head to the Financial District",
-         "item": "cigar",
-         "id": "3.5",
-         "msg": "followed the evidence to the Financial District."
-      },
-      {
-         "prompt": "Head to the Docks",
-         "item": null,
-         "id": "3.6",
-         "msg": "followed evidence to the Docks."
-      }
-   ]
-},
-{
-   "id": "3.6",
+   "id": "6.3",
    "title": "The Docks",
    "body": [
       "Amabo followed the trail of his investigation to the docks, skirting along the outskirts of the town to reach the river-facing side. The wealth of this city hardly seemed to reach the perimeter. Upon entering the docks Amabo immediately discovered signs of another struggle, and old barge tethered at the the far end of the docks showed signs of extensive damage. Amabo snuck aboard, finding crates strewn about the deck, many of them had been broken into revealing caches of illegal drugs. Amabo debated pocketing some of them for later use, but decided against it. Amabo knew that this barge was owned by the local crime boss, Derek Strum, and it was thus obvious that the vigilante was looking to put Mr. Strum out of business.",
@@ -48,18 +16,19 @@
       {
          "prompt": "Interrogate the Deckhand",
          "item": null,
-         "id": "3.6i",
+         "id": "inc/scene6i.json",
          "msg": "interrogated the deck hand."
       }
    ]
 },
 {
-   "id": "3.6i",
+   "id": "6i",
    "title": "The Docks",
    "body": [
-      "Amabo followed the trail of his investigation to the docks, skirting along the outskirts of the town to reach the river-facing side. The wealth of this city hardly seemed to reach the perimeter. Upon entering the docks Amabo immediately discovered signs of another struggle, and old barge tethered at the the far end of the docks showed signs of extensive damage. Amabo snuck aboard, finding crates strewn about the deck, many of them had been broken into revealing caches of illegal drugs. Amabo debated pocketing some of them for later use, but decided against it. Amabo knew that this barge was owned by the local crime boss, Derek Strum, and it was thus obvious that the vigilante was looking to put Mr. Strum out of business.",
-      "&quot;Great, a Crime Boss is involved, just had to put your nose in it, didn’t you... thanks Amabo,&quot; the bounty hunter grumbled under his breath.",
-      "He cast about the steadily rolling deck and thought he saw a glint of steel beneath one of the crates, but he could have been mistaken. Amabo also spotted a deckhand cleaning up the mess, this was probably a good time to do some interrogation."
+      "Amabo approached the deckhand quietly, the man did not seem to notice him. Trying to make as little noise as possible Amabo got in position behind the man and suddenly grabbed him by the shoulders. The deckhand gave a yelp of surprise but before he could react Amabo spun him around and pressed him up against the wall of the ship.",
+      "quot;Looks like some trouble went down here, sport,quot; Amabo said sternly, quot;You wouldn’t happen to know anything about it?quot;",
+      "The deckhand squirmed in the bounty hunter’s grasp, quot;I ain’t sayin nothin!quot;",
+      "quot;Nothing, eh? We’ll see about that!quot;"
    ],
    "msg": "followed the clues to the docks.",
 
@@ -69,7 +38,7 @@
       {
          "prompt": "Interrogate the Deckhand",
          "item": null,
-         "id": "3.6i",
+         "id": "",
          "msg": "interrogated the deck hand."
       }
    ]

@@ -22,4 +22,7 @@ utilsService.service('utils', function(){
 
       return Math.floor(Math.random()*(max-min))+min;
    };
+
+   this.capitalizeFirst = function(str)
+   { return str.charAt(0).toUpperCase()+str.slice(1); }
 });

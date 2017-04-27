@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
 
-    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.setScene('inc/intro.json')">
+    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
       <script src="js/angular.min.js"></script>
       <script src="js/angular-sanitize.min.js"></script>
       <script src="js/angular-cookies.min.js"></script>
@@ -20,7 +20,7 @@
       <script src="js/app/story-controller.js"></script>
       <script src="js/app/scene-factory.js"></script>
       <script src="js/app/date-factory.js"></script>
-    
+
       <script type="text/javascript" src="cordova.js"></script>
          <header role="banner" class="w3-theme">
          <section class="container">
@@ -30,6 +30,7 @@
 
         <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
         <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
+        <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
 
         <div  id="adv-pnl" class="panel panel-primary" ng-show="main.show.advance">
           <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center"
@@ -46,9 +47,9 @@
 
         </div>
 
-         <img class="image" ng-src="{{main.scene.image}}" alt="Amabo's Inn Room" usemap="#scenemap">
+         <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
          <map name="scenemap">
-            <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item.id)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
+            <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
          </map>
 
 
@@ -63,7 +64,7 @@
 
                <div id="sceneBody" class="panel-collapse collapse w3-theme-l2">
                <div class="panel-body sceneTxt">
-                  <p ng-repeat="p in main.scene.body" ng-bind-html="p"></p>
+                  <p ng-repeat="p in main.scene.body" ng-bind="p"></p>
                </div>
                </div>
          </div>

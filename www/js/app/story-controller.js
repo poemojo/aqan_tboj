@@ -3,22 +3,26 @@ var storyController = angular.module('storyController',[]);
 
 storyController.controller('MainController', ['$http', '$cookies', 'StoryScene', 'ExDate', function($http, $cookies, StoryScene, ExDate)
 {
-   var ctrl = this;
 
+   var ctrl = this;                                                                                      //alias this
+
+
+   //A Simple String Building Function
    function sprintf()
    {
-      var fmt_str = arguments[0];
+      var fmt_str = arguments[0];                                                                        //format string is first argument
 
       for (var i=1;i<arguments.length;i++)
       {
-         var search = new RegExp("\\{"+(i-1)+"\\}","gm");
+         var search = new RegExp("\\{"+(i-1)+"\\}","gm");                                                //search for placeholder {i-1}
 
-         fmt_str = fmt_str.replace(search, arguments[i]);
+         fmt_str = fmt_str.replace(search, arguments[i]);                                                //replace {i-1} with ith argument
       }
 
-      return(fmt_str);
+      return(fmt_str);                                                                                   //return formatted string
    }
 
+   //Player Inventory Persistent With Cookies
    ctrl.inventory = {
       wallet: false,
       warrant: false,
@@ -27,6 +31,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       blade: false,
       blackmail: false
    };
+
 
    ctrl.show = { advance: false, inventory: false};
    ctrl.scene = null;
@@ -54,6 +59,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
 
    ctrl.setScene = function(sceneSrc, m)
    {
+      angular.element("#sceneBody").collapse('show');
       $http.get(sceneSrc).success(function(response)
       {
          var filename = sceneSrc,
@@ -73,14 +79,14 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       .error(function(err)
       {
          var filename = null,
-         id = null,
-         title = "Error!",
-         body = err,
-         image = null,
-         items = [],
-         children = [],
-         msg = "",
-         message = "";
+            id = null,
+            title = "Error!",
+            body = err,
+            image = null,
+            items = [],
+            children = [],
+            msg = "",
+            message = "";
 
          ctrl.scene = StoryScene(filename, id, title, body, image, items, children, msg, message);
          ctrl.save();

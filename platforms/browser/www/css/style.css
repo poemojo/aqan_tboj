@@ -25,7 +25,7 @@ div#inv-pnl
 {
    position:fixed;
    top:220px;
-   left:15px;
+   right:15px;
    width:300px;
    height:200px;
 }
@@ -34,7 +34,7 @@ div#adv-pnl
 {
    position:fixed;
    top:440px;
-   left:15px;
+   right:15px;
    width:300px;
    height:200px;
 }
@@ -42,15 +42,25 @@ div#adv-pnl
 button#inv-btn
 {
    position: fixed;
+   width:85px;
    top: 165px;
-   right:15px;
+   left:15px;
 }
 
 button#adv-btn
 {
    position: fixed;
+   width:85px;
    top: 215px;
+   left:15px;
+}
+
+button#reset-btn
+{
+   position: fixed;
+   top: 165px;
    right:15px;
+   width:85px;
 }
 
 img.image

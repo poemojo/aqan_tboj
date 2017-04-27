@@ -1,0 +1,33 @@
+{
+   "id": "6i",
+   "title": "Strum's Hidden Command Base",
+   "body": [
+      "Amabo left behind the destroyed Bank and followed the secret passage underneath the city. The passage was cavernous at first but soon lead into ceramic tiles. There were security cameras everywhere  and signs of turret emplacements, yet nothing seemed to be on currently. Amabo followed the path to a large vault door that stood ajar, at the base of the doorway slumped a dead bank worker. Amabo heard the sounds of an ongoing fight from behind the door.",
+      "Amabo entered what was clearly a command base of sorts, the technology and weaponry could only have come from the military, it seems Derek Strum was very well connected. The fight was clearly happening deeper inside, Amabo hurried further inside.",
+      "\"YOUR REIGN OF TERROR ENDS NOW, STRUM!\" a deep man’s voice cried out.",
+      "Amabo broken into a sprint and burst through some heavy double doors entering what appeared to be an advanced command theater. In the center of the room a masked and hooded man was locked in a grapple with a large suited business man. The Blade of Justice struggled to gain purchase on the much larger Derek Strum, neither of them noticed Amabo.",
+      "Amabo charged into the fray, pulling the battling men off of each other, he pushed them heavily to opposite corners of the room and drew his dual pistols training one on each man. They both stood up and stared warily at Amabo.",
+      "\"You need to let me kill him... what that man has planned... the backing he has...\" the Blade started.",
+      "\"Sport, I’m here to bring YOU in, why on Earth would I let you kill him?\" the bounty hunter interrupted. Derek smirked victoriously.",
+      "\"You don’t get it! I’m the only chance this city has! Strum is going to take over, he’s got the guns, he’s got the manpower... Heck he’s got the backing of the Emperor! He’s been importing nerve gas with his drugs, he’s planning on gassing the Financial District first!\" the Blade said inching closer.",
+      "\"This vigilante is insane, I don’t know what he’s talking about. He’s killed at least 3 people on this vendetta he has against me, you said you’re here to bring him in, so do it!\""
+   ],
+   "msg": "found Derek Strum's hidden command base",
+
+   "img": {"src": null, "alt": "A hidden, underground command base. Military technology and weaponry are everywhere. The Blade and Strum fight within."},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Side with the Blade of Justice",
+         "item": null,
+         "id": "inc/ending1.json",
+         "msg": "chose to let the Blade kill Strum."
+      },
+      {
+         "prompt": "Side with Derek Strum",
+         "item": null,
+         "id": "inc/ending2.json",
+         "msg": "chose to capture the Blade of Justice."
+      }
+   ]
+}

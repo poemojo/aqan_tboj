@@ -1,9 +1,24 @@
 (function(){
 var storyController = angular.module('storyController',[]);
 
-storyController.controller('MainController', ['$cookies', 'StoryScene', function($cookies, StoryScene)
+storyController.controller('MainController', ['$http', '$cookies', 'StoryScene', 'ExDate', function($http, $cookies, StoryScene, ExDate)
 {
    var ctrl = this;
+
+   function sprintf()
+   {
+      var fmt_str = arguments[0];
+
+      for (var i=1;i<arguments.length;i++)
+      {
+         var search = new RegExp("\\{"+(i-1)+"\\}","gm");
+
+         fmt_str = fmt_str.replace(search, arguments[i]);
+      }
+
+      return(fmt_str);
+   }
+
    ctrl.inventory = {
       wallet: false,
       warrant: false,
@@ -15,36 +30,96 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
 
    ctrl.show = { advance: false, inventory: false};
    ctrl.scene = null;
+   ctrl.ex = null;
+
+   ctrl.initialize = function()
+   {
+      var scene = $cookies.get("aqan-tboj-scene");
+
+      if (scene !== undefined)
+      {
+         scene = JSON.parse(scene);
+         ctrl.setScene(scene.filename, scene.message);
+
+         var inventory = $cookies.getObject("aqan-tboj-inventory");
+
+         if (inventory !== undefined)
+            ctrl.inventory = inventory;
+      }
+      else
+      {
+         ctrl.setScene("inc/intro.json", null);
+      }
+   };
+
+   ctrl.setScene = function(sceneSrc, m)
+   {
+      $http.get(sceneSrc).success(function(response)
+      {
+         var filename = sceneSrc,
+            id = response.id,
+            title = response.title,
+            body = response.body,
+            image = response.img,
+            items = response.items,
+            children = response.children,
+            msg = response.msg,
+            message = (m) ? m : sprintf("Amabo {0}.", msg);
+
+         ctrl.scene = StoryScene(filename, id, title, body, image, items, children, msg, message);
+         ctrl.save();
+
+      })
+      .error(function(err)
+      {
+         var filename = null,
+         id = null,
+         title = "Error!",
+         body = err,
+         image = null,
+         items = [],
+         children = [],
+         msg = "",
+         message = "";
+
+         ctrl.scene = StoryScene(filename, id, title, body, image, items, children, msg, message);
+         ctrl.save();
+      });
+   };
+   ctrl.save = function()
+   {
+      ctrl.ex = ExDate("30m").expire;
+      $cookies.put("aqan-tboj-inventory", JSON.stringify(ctrl.inventory), { 'expires': ctrl.ex });
+      //ctrl.scene.testProperties();
+      ctrl.scene.save(ctrl.ex);
+   };
+
+   ctrl.reset = function()
+   {
+      ctrl.inventory = {
+         wallet: false,
+         warrant: false,
+         cigar: false,
+         mask: false,
+         blade: false,
+         blackmail: false
+      };
+      ctrl.setScene("inc/intro.json", null);
+   };
+
    ctrl.outputCoords = function(coords)
    { return ""+coords.x1+","+coords.y1+","+coords.x2+","+coords.y2;}
 
-   ctrl.setScene = function(filename)
+   ctrl.getItem = function(item)
    {
-      ctrl.scene = StoryScene.build(filename);
-   };
-
-   ctrl.getItem = function(id)
-   {
-      if (id === 'wallet')
+      //alert(item.id);
+      if (ctrl.inventory[item.id] === false)
       {
-         if (!ctrl.inventory.wallet)
-         {
-            ctrl.inventory.wallet = true;
-            ctrl.inventory.money = 250;
-            alert("Found Wallet!");
-         }
+         ctrl.inventory[item.id] = true;
+         alert(item.alert);
+         ctrl.scene.appendMessage(ctrl.scene, item.msg, null);
       }
-
-      if (id === 'warrant')
-      {
-         if (!ctrl.inventory.warrant)
-         {
-            ctrl.inventory.warrant = true;
-            alert("Found Warrant!");
-         }
-      }
-
-      $cookies.put("aqan-tboj-inventory", JSON.stringify(ctrl.inventory));
+      ctrl.save();
    };
 
    ctrl.togglePanel = function(panel)
@@ -58,7 +133,11 @@ storyController.controller('MainController', ['$cookies', 'StoryScene', function
    ctrl.loadChild = function(child)
    {
       if (child.item === null || ctrl.inventory[child.item])
+      {
          ctrl.setScene(child.id);
+         if (child.msg !== null)
+            ctrl.scene.appendMessage(ctrl.scene, child.msg, null);
+      }
    };
 
    ctrl.setChildClass = function(childItem)

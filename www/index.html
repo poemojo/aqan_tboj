@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>A Quest About Nothing: the Blade of Justice</title>
+
+        <link rel="stylesheet" href="css/w3.css">
+        <link rel="stylesheet" href="css/w3-theme.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery/3.2.1.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/bootstrap.min.js"></script>
+
+    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
+    
+    
+            <!--       This is twitter stuff -->
+        <script type="text/javascript" src="codebird/codebird.js"></script>
+        <script type="text/javascript">
+      
+        </script>
+        <script> 
+        $(function() {
+        $('#inv-btn').click(function(e) {
+
+        });
+        });
+        </script>
+    
+    
+      <script src="js/angular.min.js"></script>
+      <script src="js/angular-sanitize.min.js"></script>
+      <script src="js/angular-cookies.min.js"></script>
+      <script src="js/app.js"></script>
+      <script src="js/app/story-controller.js"></script>
+      <script src="js/app/scene-factory.js"></script>
+      <script src="js/app/date-factory.js"></script>
+
+      <script type="text/javascript" src="cordova.js"></script>
+         <header role="banner" class="w3-theme">
+         <section class="container">
+         <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
+         </section>
+         </header>
+
+        <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
+        <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
+        <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
+
+        <div  id="adv-pnl" class="panel panel-primary" ng-show="main.show.advance">
+          <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center"
+                  ng-class="main.setChildClass(child.item)" ng-bind-html="main.setChildPrompt(child)" style="display:block; width:298px;">
+          </button>
+          </div>
+
+         <div id="inv-pnl" class="panel panel-primary" ng-show="main.show.inventory">
+            <div class="container" style="width:300px !important;">
+            <div class="row">
+              <div class="col-xs-4" ng-repeat="(item, value) in main.inventory" ng-show="value" ng-bind="item"></div>
+            </div>
+            </div>
+
+        </div>
+
+         <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
+         <map name="scenemap">
+            <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
+         </map>
+
+
+         <div class="panel-group footer">
+            <div class="panel panel-default">
+               <div class="panel-heading w3-theme">
+                  <h3 class="panel-title">
+                     <a data-toggle="collapse" href="#sceneBody" ng-bind="main.scene.title"></a>
+                  </h3>
+                  </div>
+               </div>
+
+               <div id="sceneBody" class="panel-collapse collapse w3-theme-l2" aria-expanded="true">
+               <div class="panel-body sceneTxt">
+                  <p ng-repeat="p in main.scene.body" ng-bind="p"></p>
+               </div>
+               </div>
+         </div>
+
+    </body>
+</html>

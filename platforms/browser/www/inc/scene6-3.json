@@ -1,0 +1,21 @@
+{
+   "id": "6.3",
+   "title": "The Docks",
+   "body": [
+      "Amabo followed the trail of his investigation to the docks, skirting along the outskirts of the town to reach the river-facing side. The wealth of this city hardly seemed to reach the perimeter. Upon entering the docks Amabo immediately discovered signs of another struggle, and old barge tethered at the the far end of the docks showed signs of extensive damage. Amabo snuck aboard, finding crates strewn about the deck, many of them had been broken into revealing caches of illegal drugs. Amabo debated pocketing some of them for later use, but decided against it. Amabo knew that this barge was owned by the local crime boss, Derek Strum, and it was thus obvious that the vigilante was looking to put Mr. Strum out of business.",
+      "\"Great, a Crime Boss is involved, just had to put your nose in it, didn’t you... thanks Amabo,\" the bounty hunter grumbled under his breath.",
+      "He cast about the steadily rolling deck and thought he saw a glint of steel beneath one of the crates, but he could have been mistaken. Amabo also spotted a deckhand cleaning up the mess, this was probably a good time to do some interrogation."
+   ],
+   "msg": "followed the clues to the docks.",
+
+   "img": {"src": null, "alt": "The Docks. There is signs of a struggle and extensive damage done to a barge at the far end of the pier."},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Interrogate the Deckhand",
+         "item": null,
+         "id": "inc/scene6i.json",
+         "msg": "interrogated the deck hand."
+      }
+   ]
+}

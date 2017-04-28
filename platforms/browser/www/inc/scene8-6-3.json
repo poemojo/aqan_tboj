@@ -1,0 +1,20 @@
+{
+   "id": "8.6.3",
+   "title": "Helios Bank",
+   "body": [
+      "The Deck Hand gave up the bank where Strum keeps his money, none other than Helios Bank, an old institution owned by the Hestbriggin family, close family friends of the Strums. It seemed like a likely place the Blade would head to. Amabo headed towards the center of town, the deeper in he went the wealth and grandeur of Riverside became ever more apparent. As Amabo approached the Helios building he was taken aback by the obscene displays of wealth, gold inlaid marble columns decorated the ebony steps leading up to the bronze doors. There were signs that things were not all quite right here, Amabo entered the bank to find it deserted with signs of a huge conflict within. There was blood and broken marble all over the main room. There seemed to have been a furious assault on Strum’s interests in the bank, by the Blade. It seems he was repelled, however an odd feeling drew Amabo to the back of the bank. He followed a trail of blood down a flight of steps heading towards the vault. The blood trail terminated at a dead end, on a white brick wall. There was bloody handprint on one the bricks. There seemed to be a draft coming from the wall. Amabo touched the bloody brick and it depressed, the wall slid back revealing a secret tunnel leading deep into the earth.",
+      "\"Gotta keep going I guess...\""
+   ],
+   "msg": "went to Helios Bank",
+
+   "img": {"src": null, "alt": "Helios Bank. An Opulent Structure of gold inlaid marble, ebony, and bronze. Signs of a massive conflict are everywhere."},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Follow the Secret Passage",
+         "item": null,
+         "id": "inc/scene11-8-6-3.json",
+         "msg": "entered the secret passage"
+      }
+   ]
+}

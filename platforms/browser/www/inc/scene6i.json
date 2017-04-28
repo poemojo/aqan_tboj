@@ -1,0 +1,22 @@
+{
+   "id": "6i",
+   "title": "The Docks (Interrogation)",
+   "body": [
+      "Amabo approached the deckhand quietly, the man did not seem to notice him. Trying to make as little noise as possible Amabo got in position behind the man and suddenly grabbed him by the shoulders. The deckhand gave a yelp of surprise but before he could react Amabo spun him around and pressed him up against the wall of the ship.",
+      "\"Looks like some trouble went down here, sport,\" Amabo said sternly, \"You wouldn’t happen to know anything about it?\"",
+      "The deckhand squirmed in the bounty hunter’s grasp, \"I ain’t sayin nothin!\"",
+      "\"Nothing, eh? We’ll see about that!\""
+   ],
+   "msg": "had to choose how to interrogate the deckhand.",
+
+   "img": {"src": null, "alt": "Interrogation of the Deckhand"},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Beat the Information out of him.",
+         "item": null,
+         "id": "inc/scene8-6-3.json",
+         "msg": "chose to beat up the deck hand."
+      }
+   ]
+}

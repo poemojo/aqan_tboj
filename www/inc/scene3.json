@@ -6,14 +6,14 @@
       "\"You just had to accept this warrant... Thanks Amabo...\" the bounty hunter said to himself.",
       "Amabo knew this warehouse held goods for a shipping concern in the city, the docks seemed like a likely next place to investigate, but perhaps there were other clues to be found here at the warehouse."
    ],
-   "msg": "entered the Warehouse District.",
+   "msg": "entered the Warehouse District",
 
    "img": {"src":"img/scene3.png", "alt": "The Warehouse district. There is a great deal of damage and blood in front of Warehouse 202. There is also smoke coming from within the guard house."},
    "items": [
       {
          "x1":362, "y1":288, "x2":415, "y2":345,
          "id": "cigar", "alt": "A ruined highend cigar covered in blood.",
-         "msg": "picked up a bloody, highend cigar. The brand is a favorite among influential money people.",
+         "msg": "picked up a bloody, highend cigar. The brand is a favorite among influential money people",
          "alert": "Got Bloody High-End Cigar!"
       }
    ],
@@ -22,13 +22,13 @@
          "prompt": "Head to the Financial District",
          "item": "cigar",
          "id": "inc/scene5-3.json",
-         "msg": "followed the evidence to the Financial District."
+         "msg": "followed the evidence to the Financial District"
       },
       {
          "prompt": "Head to the Docks",
          "item": null,
          "id": "inc/scene6-3.json",
-         "msg": "followed evidence to the Docks."
+         "msg": "followed evidence to the Docks"
       }
    ]
 }

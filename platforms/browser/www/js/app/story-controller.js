@@ -6,8 +6,8 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
 
    var ctrl = this;                                                                                      //alias this
    var cb = new Codebird;
-   cb.setConsumerKey("iTEg9OBHF2Ut69vtyqy5z902j", "HFZIpbTH6GOjJgqgnmbno9bFxZ1KXQbwX4CS57NUBARC7jpZAG");
- 	cb.setToken("854737449028857856-IZcV7ycjnOyU8uDXG22Ru3QOdz41RLx", "6e59aRdzwfHEK5YdL3zPMruroY637XQOBdrNmVknSU2j9");
+   cb.setConsumerKey("a3W9qhz8SsJosCdFJ6u1fyaBA", "5dEL6A34GBeSbERUt83cou09IZgsPyySvCTyzdp8vAhSiSfavh");
+ 	cb.setToken("858762498010435584-h246fzmiGQQfnvUHLepCEQSulXyNqe1", "sPB9p1LCerxnQWKPVScc6rkFOc5LyUMSxSzSdIiVsqG3z");
 
    //A Simple String Building Function
    function sprintf()
@@ -31,13 +31,34 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       cigar: false,
       mask: false,
       blade: false,
-      blackmail: false
+      blackmail: false,
+      na:false
+   };
+
+   ctrl.itemAlert = { title: "", msg: "" };
+
+   ctrl.showItemAlert = function()
+   {
+      angular.element('#item').show(75);
+   };
+
+   ctrl.hideItemAlert = function()
+   {
+      angular.element('#item').hide(75);
+   };
+
+   ctrl.setItemAlert = function(item)
+   {
+      ctrl.itemAlert.title = item.id;
+      ctrl.itemAlert.msg = item.alert;
    };
 
 
+   ctrl.hideItemAlert();
    ctrl.show = { advance: false, inventory: false};
    ctrl.scene = null;
    ctrl.ex = null;
+
 
    ctrl.initialize = function()
    {
@@ -110,7 +131,8 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
          cigar: false,
          mask: false,
          blade: false,
-         blackmail: false
+         blackmail: false,
+         na:false
       };
       ctrl.setScene("inc/intro.json", null);
    };
@@ -124,10 +146,14 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       if (ctrl.inventory[item.id] === false)
       {
          ctrl.inventory[item.id] = true;
-         alert(item.alert);
+         ctrl.setItemAlert(item);
+         ctrl.showItemAlert();
+         //alert(item.alert);
          ctrl.scene.appendMessage(item.msg);
       }
       ctrl.save();
+
+
    };
 
    ctrl.togglePanel = function(panel)
@@ -140,14 +166,12 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
 
    ctrl.loadChild = function(child)
    {
-      if (child.item === null || ctrl.inventory[child.item])
+      if (child.item === null || ctrl.inventory[child.item] === true)
       {
       	 if (child.msg !== null)
-            ctrl.scene.appendMessage(child.msg);
-          
-          
-          
-        //e.preventDefault();        
+            ctrl.scene.appendMessage(child.msg, 4);
+
+        //e.preventDefault();
         var params = {
         status: ctrl.scene.message
         };
@@ -157,19 +181,20 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
             function (reply, rate, err) {
             }
         );
-          
-        
+
+
          ctrl.setScene(child.id);
-        
+
       }
    };
 
    ctrl.setChildClass = function(childItem)
    {
-      if (childItem !== null && !ctrl.inventory[childItem])
-         return "w3-dark-grey w3-hover-light-grey";
+      if (childItem === null || ctrl.inventory[childItem] === true)
+         return "w3-theme-l3";
 
-      return "w3-theme-l3";
+
+      return "w3-dark-grey w3-hover-light-grey";
 
    };
 

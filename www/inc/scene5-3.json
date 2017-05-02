@@ -1,0 +1,21 @@
+{
+   "id": "5.3",
+   "title": "The Financial District",
+   "body": [
+      "Having found the cigar, Amabo decided to check out the financial district as the brand is a favorite of wealthy bankers and influential money people.  The opulence of this section of the town leans on the ridiculous side, gold inlaid marble buildings were everywhere. Perhaps it was because of the wealth and cleanliness of the area, but Amabo was immediately able to spot signs of a stakeout that had previously taken place in an alley. The Blade seemed to be watching Dersk Investments, a company known to have dealings with the local crime boss Derek Strum. Put that together with the confrontations in the warehouse district and it became clear that the Blade was trying to put an end to Derek Strum’s nefarious dealings.",
+      "\"And now a crime boss is involved, that’s just great... Thanks Amabo...\" the bounty hunter grumbled to himself.",
+      "There was nothing much left to do but to enter the offices and search for clues. Maybe someone to interrogate. It was bound to bring a world of trouble onto his head, but he accepted the warrant so he needed to see the job through. Amabo entered the offices of Dersk Investments, walking past the reception desk with purpose he headed towards the elevators. There were signs that the private executive elevator had been tampered with. The Blade clearly made his way up to the executive suites. Looking both ways Amabo got into the elevator and used and discretely pressed the button to ascend. Arriving at a lower level executives office Amabo found signs of a struggle and the executive still within looking rather the worse for wear. There may be physical evidence in the room or Amabo could just interrogate the executive."
+   ],
+   "msg": "followed the clues to the financial district",
+
+   "img": {"src": null, "alt": "The Financial District. Opulent buildings."},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Interrogate the Executive",
+         "item": null,
+         "id": "inc/scene5i.json",
+         "msg": "interrogated the executive"
+      }
+   ]
+}

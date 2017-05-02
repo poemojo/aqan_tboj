@@ -21,13 +21,13 @@
          "prompt": "Side with the Blade of Justice",
          "item": null,
          "id": "inc/ending1.json",
-         "msg": "chose to let the Blade kill Strum."
+         "msg": "chose to let the Blade kill Strum"
       },
       {
          "prompt": "Side with Derek Strum",
          "item": null,
          "id": "inc/ending2.json",
-         "msg": "chose to capture the Blade of Justice."
+         "msg": "chose to capture the Blade of Justice"
       }
    ]
 }

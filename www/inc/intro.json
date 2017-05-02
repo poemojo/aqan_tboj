@@ -6,7 +6,7 @@
       "\"It was from a dirty job, sport,\" Amabo gave the valet a curt nod and turned back to his room, closing the door behind him.",
       "They may be expensive, but the wake-up calls the valet made in person were the only way Amabo could start the day before 12:30. It was 8:30 now, a clean and clear morning in the rich trading town of Riverside. Yet, for all the joy and beauty that could be found in a morning such as this, Amabo felt none of it. Amabo Karrab was a hard gritted bounty hunter, a soldier of fortune, it was often ugly work, but it paid for the wake up calls. Like every morning after his wake up call in this modest long-term inn, in this opulent city, Amabo went about the room finding his discarded clothes and putting them on, grumbling to himself all the while. He pulled on his pants and picked up his shirt, then groaned in disgust, a large bloodstain was smeared across the front of it. He put the shirt on anyway. Amabo slipped into his long duster coat, threw on his wide brimmed hat, and was just about ready to leave his room. He felt like he was forgetting something, but that was nothing new."
    ],
-   "msg": "began his day like any other.",
+   "msg": "began his day like any other",
 
    "img": {"src":"img/scene1.png", "alt": "Amabo's Inn Room. Somewhere in here are items Amabo may need."},
    "items": [
@@ -24,6 +24,12 @@
       }
    ],
    "children": [
+      {
+         "prompt": "Certain Options Require Items.<br>Try Searching the scene for items.",
+         "item": "hint",
+         "id": null,
+         "msg": null
+      },
       {
          "prompt": "Go Downstairs",
          "item": null,

@@ -7,7 +7,7 @@
       "The deckhand squirmed in the bounty hunter’s grasp, \"I ain’t sayin nothin!\"",
       "\"Nothing, eh? We’ll see about that!\""
    ],
-   "msg": "had to choose how to interrogate the deckhand.",
+   "msg": "had to choose how to interrogate the deckhand",
 
    "img": {"src": null, "alt": "Interrogation of the Deckhand"},
    "items": [],
@@ -16,7 +16,31 @@
          "prompt": "Beat the Information out of him.",
          "item": null,
          "id": "inc/scene8-6-3.json",
-         "msg": "chose to beat up the deck hand."
+         "msg": "chose to beat up the deck hand"
+      },
+      {
+         "prompt": "Threaten to cut off his hand.",
+         "item": "blade",
+         "id": "inc/scene8-6-3.json",
+         "msg": "chose to threaten to cut off the deck hand's hand"
+      },
+      {
+         "prompt": "Bribe him.",
+         "item": "N/A [wallet]",
+         "id": "inc/scene8-6-3.json",
+         "msg": "chose to bribe the deck han"
+      },
+      {
+         "prompt": "Question him officially.",
+         "item": "N/A [warrant]",
+         "id": "inc/scene8-6-3.json",
+         "msg": "chose to question the deck hand officially"
+      },
+      {
+         "prompt": "Threaten to disrupt business.",
+         "item": "N/A",
+         "id": "inc/scene8-6-3.json",
+         "msg": "chose to threaten the deck hand with disruption of business"
       }
    ]
 }

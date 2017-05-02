@@ -13,22 +13,16 @@
         <script src="js/bootstrap.min.js"></script>
 
     <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
-    
-    
-            <!--       This is twitter stuff -->
-        <script type="text/javascript" src="codebird/codebird.js"></script>
-        <script type="text/javascript">
-      
-        </script>
-        <script> 
-        $(function() {
-        $('#inv-btn').click(function(e) {
 
-        });
-        });
-        </script>
-    
-    
+
+            <!--       This is twitter stuff -->
+      <script type="text/javascript" src="codebird/codebird.js"></script>
+      <script type="text/javascript">
+
+      </script>
+
+
+
       <script src="js/angular.min.js"></script>
       <script src="js/angular-sanitize.min.js"></script>
       <script src="js/angular-cookies.min.js"></script>
@@ -47,6 +41,21 @@
         <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
         <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
         <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
+
+        <div id="item" class="w3-card-4 w3-theme-d4">
+          <header class="w3-container w3-theme-d4">
+            <h3 ng-bind="main.itemAlert.title"></h3>
+          </header>
+
+          <div class="w3-container w3-theme-l3">
+            <h4 ng-bind="main.itemAlert.msg"></h4>
+            <button class="w3-button w3-btn w3-theme-d3 w3-centered w3-center" ng-click="main.hideItemAlert()">OK</button>
+          </div>
+
+          <footer class="w3-container w3-theme-d4">
+            <h5>Found Item</h5>
+          </footer>
+        </div>
 
         <div  id="adv-pnl" class="panel panel-primary" ng-show="main.show.advance">
           <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center"

@@ -70,3 +70,29 @@ img.image
    width:1320px;
    height:540px;
 }
+
+#item
+{
+   position:fixed;
+   top:50%;
+   margin-top:-75px;
+   left:50%;
+   margin-left:-150px;
+   height:225px;
+   width:300px;
+}
+
+#item > header
+{
+   height:50px;
+}
+
+#item > div
+{
+   height:139px;
+}
+
+#item > footer
+{
+   height:36px;
+}

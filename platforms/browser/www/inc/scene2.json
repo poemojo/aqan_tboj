@@ -10,7 +10,7 @@
       "\"Thanks Amabo,\" Soren said.",
       "Having taken care of business, Amabo stepped outside and looked up and down the street. He stretched wide, loosening his taught muscles. It was time to start the day, but what on earth was he going to do now?"
    ],
-   "msg": "handled his business with the owner of the inn, then went outside.",
+   "msg": "handled his business with the owner of the inn, then went outside",
 
    "img": {"src":"img/scene2.png", "alt": "Amabo stood outside the inn on a main street in the city Riverside."},
    "items": [],
@@ -19,19 +19,13 @@
          "prompt": "Head to the Warehouse District",
          "item": "warrant",
          "id": "inc/scene3.json",
-         "msg": "decided to start his investigation in the Warehouse Disctrict."
+         "msg": "decided to start his investigation in the Warehouse Disctrict"
       },
       {
          "prompt": "Head to the Red Light District",
-         "item": "warrant",
+         "item": "N/A [warrant]",
          "id": "inc/scene4.json",
-         "msg": "decided to start his investigation in the Red Light District."
-      },
-      {
-         "prompt": "\"I don't feel like working today...\"",
-         "item": null,
-         "id": "inc/scene12.json",
-         "msg": "decided he didn't want to to work."
+         "msg": "decided to start his investigation in the Red Light District"
       }
    ]
 }

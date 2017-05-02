@@ -6,7 +6,7 @@
       "\"Great, a Crime Boss is involved, just had to put your nose in it, didn’t you... thanks Amabo,\" the bounty hunter grumbled under his breath.",
       "He cast about the steadily rolling deck and thought he saw a glint of steel beneath one of the crates, but he could have been mistaken. Amabo also spotted a deckhand cleaning up the mess, this was probably a good time to do some interrogation."
    ],
-   "msg": "followed the clues to the docks.",
+   "msg": "followed the clues to the docks",
 
    "img": {"src": null, "alt": "The Docks. There is signs of a struggle and extensive damage done to a barge at the far end of the pier."},
    "items": [],
@@ -15,7 +15,7 @@
          "prompt": "Interrogate the Deckhand",
          "item": null,
          "id": "inc/scene6i.json",
-         "msg": "interrogated the deck hand."
+         "msg": "interrogated the deck hand"
       }
    ]
 }

@@ -9,7 +9,7 @@
         Tim Krajewski,
         Chris Stehm
     </author>
-
+    <plugin name="cordova-plugin-inappbrowser" />
     <preference name="permissions" value="none" />
     <preference name="target-device" value="universal" />
     <oreference name="webviewbounce" value="false" />

@@ -9,6 +9,12 @@
         Tim Krajewski,
         Chris Stehm
     </author>
+
+    <preference name="permissions" value="none" />
+    <preference name="target-device" value="universal" />
+    <oreference name="webviewbounce" value="false" />
+    <preference name="stay-in-webview" value="false" />
     <content src="index.html" />
     <access origin="*" />
+
 </widget>

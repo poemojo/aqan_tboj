@@ -9,12 +9,15 @@
         Tim Krajewski,
         Chris Stehm
     </author>
-    <plugin name="cordova-plugin-inappbrowser" />
+   
+
     <preference name="permissions" value="none" />
     <preference name="target-device" value="universal" />
     <oreference name="webviewbounce" value="false" />
     <preference name="stay-in-webview" value="false" />
     <content src="index.html" />
     <access origin="*" />
-
+   <plugin name="cordova-plugin-inappbrowser" />
+    <plugin name="cordova-plugin-whitelist" />
+    <allow-navigation href="*" />
 </widget>

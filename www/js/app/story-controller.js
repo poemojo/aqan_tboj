@@ -8,6 +8,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
    var cb = new Codebird;
    cb.setConsumerKey("a3W9qhz8SsJosCdFJ6u1fyaBA", "5dEL6A34GBeSbERUt83cou09IZgsPyySvCTyzdp8vAhSiSfavh");
  	cb.setToken("858762498010435584-h246fzmiGQQfnvUHLepCEQSulXyNqe1", "sPB9p1LCerxnQWKPVScc6rkFOc5LyUMSxSzSdIiVsqG3z");
+   cb.setUseProxy(false);
 
    //A Simple String Building Function
    function sprintf()
@@ -31,8 +32,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       cigar: false,
       mask: false,
       blade: false,
-      blackmail: false,
-      na:false
+      blackmail: false
    };
 
    ctrl.itemAlert = { title: "", msg: "" };
@@ -131,8 +131,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
          cigar: false,
          mask: false,
          blade: false,
-         blackmail: false,
-         na:false
+         blackmail: false
       };
       ctrl.setScene("inc/intro.json", null);
    };

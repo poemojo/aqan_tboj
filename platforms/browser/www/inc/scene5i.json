@@ -1,0 +1,35 @@
+{
+   "id": "5i",
+   "title": "The Financial District (Interrogation)",
+   "body": [
+      "\"You’re not supposed to be up here, what on earth do you want from me?\" demanded the executive.",
+      "\"You're looking a little worse for wear there, sport,\" Amabo said coolly, \"You wouldn't have happened to have a run-in with a crazed masked man would you?\"",
+      "Amabo leaned over the desk until his face was inches from the executives. The man began to sweat heavily as his eyes refused to meet Amabo's. Amabo smirked, \"You know what the Blade's after, you probably even know where he went when he was done with you, so talk.\"",
+      "\"I'm not going to tell you anything!\" yelped the businessman.",
+      "\"Not going to tell me anything, eh? We'll see about that...\""
+   ],
+   "msg": "had to choose how to interrogate the executive",
+
+   "img": {"src": null, "alt": "Interrogation of the Executive"},
+   "items": [],
+   "children": [
+      {
+         "prompt": "Threaten his family.",
+         "item": null,
+         "id": "inc/scene8-5-3.json",
+         "msg": "chose to threaten the executive's family"
+      },
+      {
+         "prompt": "Threaten to kill him.",
+         "item": "blade",
+         "id": "inc/scene8-5-3.json",
+         "msg": "chose to threaten to kill the executive"
+      },
+      {
+         "prompt": "Question him officially.",
+         "item": "N/A [warrant]",
+         "id": "inc/scene8-5-3.json",
+         "msg": "chose to threaten to kill the executive"
+      }
+   ]
+}

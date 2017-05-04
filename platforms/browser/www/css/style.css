@@ -96,3 +96,22 @@ img.image
 {
    height:36px;
 }
+
+.text-100 { font-size:125%; }
+.text-125 { font-size:150%; }
+.text-150 { font-size:175%; }
+.text-175 { font-size:200%; }
+
+
+#txtScaleUp, #txtScaleDown
+{
+   width:45px;
+   height:45px;
+   font-weight:bold;
+   position:fixed;
+   right:15px;
+   font-size:135%;
+}
+
+#txtScaleUp { top: 215px; }
+#txtScaleDown { top: 275px;}

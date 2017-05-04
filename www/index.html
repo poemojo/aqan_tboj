@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <script src="js/bootstrap.min.js"></script>
 
-    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
+    <body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()" ng-class="main.textScale">
 
 
             <!--       This is twitter stuff -->
@@ -42,6 +42,8 @@
         <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
         <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
         <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
+        <button class="w3-circle w3-button w3-btn w3-theme-l3 text-center" id="txtScaleUp" ng-click="main.scaleTextUp()">+</button>
+        <button class="w3-circle w3-button w3-btn w3-theme-d3 text-center" id="txtScaleDown" ng-click="main.scaleTextDown()">-</button>
 
         <div id="item" class="w3-card-4 w3-theme-d4">
           <header class="w3-container w3-theme-d4">

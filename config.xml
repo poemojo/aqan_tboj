@@ -9,7 +9,7 @@
         Tim Krajewski,
         Chris Stehm
     </author>
-   
+
 
     <preference name="permissions" value="none" />
     <preference name="target-device" value="universal" />

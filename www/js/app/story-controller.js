@@ -35,7 +35,27 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       blackmail: false
    };
 
+   ctrl.scaleClasses = ["text-100", "text-125", "text-150", "text-175"];
+   ctrl.scaleIndex = 0;
+   ctrl.textScale = ctrl.scaleClasses[0];
+
    ctrl.itemAlert = { title: "", msg: "" };
+
+   ctrl.scaleTextUp = function()
+   {
+      var len = ctrl.scaleClasses.length;
+      ctrl.scaleIndex = (ctrl.scaleIndex+1 >= len) ? ctrl.scaleIndex : ctrl.scaleIndex+1;
+
+      ctrl.textScale = ctrl.scaleClasses[ctrl.scaleIndex];
+   };
+
+   ctrl.scaleTextDown = function()
+   {
+      var len = ctrl.scaleClasses.length;
+      ctrl.scaleIndex = (ctrl.scaleIndex-1 < 0) ? 0 : ctrl.scaleIndex-1;
+
+      ctrl.textScale = ctrl.scaleClasses[ctrl.scaleIndex];
+   };
 
    ctrl.showItemAlert = function()
    {

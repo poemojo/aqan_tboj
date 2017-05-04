@@ -11,7 +11,7 @@
    ],
    "msg": "was thanked by the Blade of Justice",
 
-   "img": {"src": null, "alt": "The Blade of Justice. A Masked Man in a hooded, leather vest. He carries a grotesque dao broadsword with a bunch of smaller blades welded to it."},   
+   "img": {"src": "img/blade_end.png", "alt": "The Blade of Justice. A Masked Man in a hooded, leather vest. He carries a grotesque dao broadsword with a bunch of smaller blades welded to it."},   
    "items": [],
    "children": []
 }

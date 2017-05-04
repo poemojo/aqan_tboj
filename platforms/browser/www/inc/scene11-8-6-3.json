@@ -14,7 +14,7 @@
    ],
    "msg": "found Derek Strum's hidden command base",
 
-   "img": {"src": null, "alt": "A hidden, underground command base. Military technology and weaponry are everywhere. The Blade and Strum fight within."},
+   "img": {"src": "img/scene11.png", "alt": "A hidden, underground command base. Military technology and weaponry are everywhere. The Blade and Strum fight within."},
    "items": [],
    "children": [
       {

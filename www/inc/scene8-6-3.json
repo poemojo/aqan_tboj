@@ -7,7 +7,7 @@
    ],
    "msg": "went to Helios Bank",
 
-   "img": {"src": null, "alt": "Helios Bank. An Opulent Structure of gold inlaid marble, ebony, and bronze. Signs of a massive conflict are everywhere."},
+   "img": {"src": "img/scene8.png", "alt": "Helios Bank. An Opulent Structure of gold inlaid marble, ebony, and bronze. Signs of a massive conflict are everywhere."},
    "items": [],
    "children": [
       {

@@ -8,7 +8,7 @@
    ],
    "msg": "followed the clues to the docks",
 
-   "img": {"src": null, "alt": "The Docks. There is signs of a struggle and extensive damage done to a barge at the far end of the pier."},
+   "img": {"src": "img/scene6.png", "alt": "The Docks. There is signs of a struggle and extensive damage done to a barge at the far end of the pier."},
    "items": [],
    "children": [
       {

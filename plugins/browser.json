@@ -9,6 +9,9 @@
     "installed_plugins": {
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "com.aqan.tboj"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "com.aqan.tboj"
         }
     },
     "dependent_plugins": {}

@@ -1,5 +1,4 @@
 $(function(){
-
    $("#sceneTitle").on('swipedown', function(){
       $('#sceneBody').collapse('hide');
       dbg.alert("swipe down!");

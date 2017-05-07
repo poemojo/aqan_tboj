@@ -1,3 +1,15 @@
+html, body
+{
+   font-faimily: 'Roboto', sans-serif; 
+   font-size:15px !important;
+}
+h1,h2,h3,h4,h5,h6 { font-family: 'Ubuntu', sans-serif; font-weight:bold;}
+
+
+h1.page-header small
+{
+   color:#FFF !important;
+}
 .footer
 {
    position: fixed;
@@ -42,7 +54,7 @@ div#adv-pnl
 button#inv-btn
 {
    position: fixed;
-   width:85px;
+   width:100px;
    top: 165px;
    left:15px;
 }
@@ -50,7 +62,7 @@ button#inv-btn
 button#adv-btn
 {
    position: fixed;
-   width:85px;
+   width:100px;
    top: 215px;
    left:15px;
 }

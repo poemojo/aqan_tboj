@@ -5,18 +5,27 @@
    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
    <title>A Quest About Nothing: the Blade of Justice</title>
 
+
    <link rel="stylesheet" href="css/w3.css">
    <link rel="stylesheet" href="css/w3-theme.css">
-   <link rel="stylesheet" href="css/style.css">
 
+   <script>
+      $(document).on('mobileinit', function()
+      {
+         $.mobile.ignoreContentEnabled=true;
+      });
+   </script>
    <script src="js/jquery/3.2.1.min.js"></script>
+   <link rel="stylesheet" href="css/jquery.mobile-1.5.0a1.min.css">
    <script src="js/jquery/mobile-1.5.0a.1.min.js"></script>
    <script src="js/jquery/mobile-swipeVertical.js"></script>
 
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <script src="js/bootstrap.min.js"></script>
 
-   <script>var _DEBUG_ = true;</script>
+   
+   <link rel="stylesheet" href="css/style.css">
+
    <script src="js/dbg.js"></script>
 
    <script src="js/main.js"></script>
@@ -45,7 +54,7 @@
 
    <header role="banner" class="w3-theme">
       <section class="container">
-         <h1 class="page-header pull-left">A Quest About Nothing<br><small class="w3-white">the Blade of Justice</small></h1>
+         <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
       </section>
    </header>
 
@@ -94,7 +103,7 @@
       <div class="panel panel-default">
          <div class="panel-heading w3-theme">
             <h3 class="panel-title">
-               <a data-toggle="collapse"  id="sceneTitle" href="#sceneBody" ng-bind="main.scene.title"></a>
+               <a data-toggle="collapse" style="display:block;" id="sceneTitle" href="#sceneBody" ng-bind="main.scene.title"></a>
             </h3>
          </div>
       </div>

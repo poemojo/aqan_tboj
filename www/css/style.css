@@ -97,10 +97,11 @@ img.image
    height:36px;
 }
 
-.text-100 { font-size:125%; }
-.text-125 { font-size:150%; }
-.text-150 { font-size:175%; }
-.text-175 { font-size:200%; }
+.text-100 { font-size:100%; }
+.text-125 { font-size:125%; }
+.text-150 { font-size:150%; }
+.text-175 { font-size:175%; }
+.text-200 { font-size:200%; }
 
 
 #txtScaleUp, #txtScaleDown

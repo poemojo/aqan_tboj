@@ -1,42 +1,13 @@
 $(function(){
 
-   var inventory = {
-      wallet: false,
-      warrant: false,
-      cigar: false,
-      mask: false,
-      blade: false,
-      blackmail: false,
-      money: 0
-   };
+   $("#sceneTitle").on('swipedown', scenePanel(0));
+   $("#sceneTitle").on('swipeup', scenePanel(1));
 
-
-   $("#inv-wallet").hide();
-   $("#inv-warrant").hide();
-   $("#inv-pnl").hide();
-   $("#wallet").click(function(){
-      if (!inventory.wallet)
-      {
-         $("#inv-wallet").show();
-         inventory.wallet = true;
-         inventory.money = 250;
-         alert("Found Wallet!");
-      }
-   });
-
-   $("#warrant").click(function(){
-
-       if (!inventory.warrant)
-       {
-         $("#inv-warrant").show();
-         inventory.warrant = true;
-         alert("Found Warrant!");
-       }
-   });
-
-   $("#inv-btn").click(function(){
-      $("#inv-pnl").toggle(150);
-
-     
-   });
+   function scenePanel(toggle)
+   {
+      if (toggle === true || toggle === 1 || toggle === 'show')
+         $('#sceneBody').collapse('show');
+      else if (toggle === false || toggle === 0 || toggle === 'hide')
+         $('#sceneBody').collapse('hide');
+   }
 });

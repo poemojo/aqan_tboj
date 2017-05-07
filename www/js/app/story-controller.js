@@ -35,7 +35,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
       blackmail: false
    };
 
-   ctrl.scaleClasses = ["text-100", "text-125", "text-150", "text-175"];
+   ctrl.scaleClasses = ["text-100", "text-125", "text-150", "text-175", "text-200"];
    ctrl.scaleIndex = 0;
    ctrl.textScale = ctrl.scaleClasses[0];
 

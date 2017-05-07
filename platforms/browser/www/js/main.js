@@ -1,12 +1,10 @@
 $(function(){
    $("#sceneTitle").on('swipedown', function(){
       $('#sceneBody').collapse('hide');
-      dbg.alert("swipe down!");
+      //dbg.alert("swipe down!");
    });
    $("#sceneTitle").on('swipeup', function(){ 
       $('#sceneBody').collapse('show');
-      dbg.alert("swipe up!");
+      //dbg.alert("swipe up!");
    });
-
-
 });

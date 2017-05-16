@@ -23,7 +23,7 @@
    <link rel="stylesheet" href="css/bootstrap.min.css">
    <script src="js/bootstrap.min.js"></script>
 
-   
+   <script src="js/iscroll.js"></script>
    <link rel="stylesheet" href="css/style.css">
 
    <script src="js/dbg.js"></script>
@@ -31,7 +31,7 @@
    <script src="js/main.js"></script>
 </head>
 
-<body  class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
+<body class="w3-theme-l5" ng-app="aqan" ng-controller="MainController as main" ng-init="main.initialize()">
 
    <!-- Twitter Scripts -->
    <script type="text/javascript" src="js/jsOAuth-1.3.6.min.js"></script>
@@ -93,10 +93,12 @@
       </div>
    </div>
 
+   <div id="sceneImage">
    <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
    <map name="scenemap">
       <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
    </map>
+   </div>
 
 
    <div class="panel-group footer" >

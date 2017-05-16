@@ -15,8 +15,14 @@ function sprintf()
 
 var dbg = {};
 
-if (_DEBUG_)
+if (_DEBUG_ === undefined)
 {
+   dbg.call = function(callback, params)
+   { return null; };
+
+   dbg.alert = function(message)
+   { return false; };
+} else {
    dbg.call = function(callback, params)
    {
       var thisValue;
@@ -44,10 +50,4 @@ if (_DEBUG_)
 
       return true;
    };
-} else {
-   dbg.call = function(callback, params)
-   { return null; };
-
-   dbg.alert = function(message)
-   { return false; };
 }

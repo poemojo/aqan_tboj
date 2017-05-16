@@ -26,7 +26,7 @@
    <script src="js/iscroll.js"></script>
    <link rel="stylesheet" href="css/style.css">
 
-   <script src="js/dbg.js"></script>
+   <!-- <script src="js/dbg.js"></script> -->
 
    <script src="js/main.js"></script>
 </head>
@@ -58,7 +58,14 @@
       </section>
    </header>
 
-   <button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
+   <div id="sceneImage">
+   <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
+   <map name="scenemap">
+      <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
+   </map>
+   </div>
+
+<button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
    <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
    <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
    <button class="w3-circle w3-button w3-btn w3-theme-l3 text-center" id="txtScaleUp" ng-click="main.scaleTextUp()">+</button>
@@ -92,14 +99,6 @@
          </div>
       </div>
    </div>
-
-   <div id="sceneImage">
-   <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
-   <map name="scenemap">
-      <area ng-repeat="item in main.scene.items" ng-click="main.getItem(item)"  shape="rect" coords="{{main.outputCoords(item)}}" id="{{item.id}}" alt="{{item.alt}}">
-   </map>
-   </div>
-
 
    <div class="panel-group footer" >
       <div class="panel panel-default">

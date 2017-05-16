@@ -84,7 +84,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
    {
       var scene = $cookies.get("aqan-tboj-scene");
 
-      var myScroll = new IScroll('#sceneImage');
+      var myScroll = new IScroll('#sceneImage', {scrollX: true});
 
       if (scene !== undefined)
       {

@@ -84,8 +84,8 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
    {
       var scene = $cookies.get("aqan-tboj-scene");
 
-      setTimeout(function(){imgScroll = new IScroll('#sceneImage', {scrollX: true});}, 100);
-      setTimeout(function(){advScroll = new IScroll('#advancePanel', {scrollX: false, scrollY: true, scrollbars: true, interactiveScrollbars: true});}, 100);
+      setTimeout(function(){imgScroll = new IScroll('#sceneImage', {scrollX: true, scrollY: true});}, 100);
+      setTimeout(function(){advScroll = new IScroll('#advancePanel', {scrollX: false, scrollY: true, scrollbars: true, interactiveScrollbars: true, fadeScrollbars: true});}, 100);
  
 
       if (scene !== undefined)

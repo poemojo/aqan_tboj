@@ -9,14 +9,14 @@
    <link rel="stylesheet" href="css/w3.css">
    <link rel="stylesheet" href="css/w3-theme.css">
 
+   <script src="js/jquery/3.2.1.min.js"></script>
+   <link rel="stylesheet" href="css/jquery.mobile-1.5.0a1.min.css">
    <script>
       $(document).on('mobileinit', function()
       {
          $.mobile.ignoreContentEnabled=true;
       });
    </script>
-   <script src="js/jquery/3.2.1.min.js"></script>
-   <link rel="stylesheet" href="css/jquery.mobile-1.5.0a1.min.css">
    <script src="js/jquery/mobile-1.5.0a.1.min.js"></script>
    <script src="js/jquery/mobile-swipeVertical.js"></script>
 
@@ -51,13 +51,6 @@
    <!-- Apache Cordova -->
    <script type="text/javascript" src="cordova.js"></script>
 
-
-   <header role="banner" class="w3-theme">
-      <section class="container">
-         <h1 class="page-header pull-left">A Quest About Nothing<br><small>the Blade of Justice</small></h1>
-      </section>
-   </header>
-
    <div id="sceneImage">
    <img class="image" ng-src="{{main.scene.image.src}}" alt="{{main.scene.image.alt}}" usemap="#scenemap">
    <map name="scenemap">
@@ -65,11 +58,17 @@
    </map>
    </div>
 
-<button class="w3-btn w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
-   <button class="w3-button w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
-   <button class="w3-button w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
-   <button class="w3-circle w3-button w3-btn w3-theme-l3 text-center" id="txtScaleUp" ng-click="main.scaleTextUp()">+</button>
-   <button class="w3-circle w3-button w3-btn w3-theme-d3 text-center" id="txtScaleDown" ng-click="main.scaleTextDown()">-</button>
+   <header role="banner" class="w3-theme w3-bar">
+      <section class="container">
+         <h1 class="page-header pull-left">A Quest About Nothing<br><small>The Blade of Justice</small></h1>
+      </section>
+   </header>
+
+   <button class="w3-btn w3-card-2 w3-theme text-center" id="inv-btn" ng-click="main.togglePanel('inventory')">Inventory</button>
+   <button class="w3-button w3-card-2 w3-btn w3-theme text-center" id="adv-btn" ng-click="main.togglePanel('advance')">Advance</button>
+   <button class="w3-button w3-card-2 w3-btn w3-theme-d4 text-center" id="reset-btn" ng-click="main.reset()">Restart</button>
+   <button class="w3-circle w3-card-2 w3-button w3-btn w3-theme-l3 text-center" id="txtScaleUp" ng-click="main.scaleTextUp()">+</button>
+   <button class="w3-circle w3-card-2 w3-button w3-btn w3-theme-d3 text-center" id="txtScaleDown" ng-click="main.scaleTextDown()">-</button>
 
    <div id="item" class="w3-card-4 w3-theme-d4">
       <header class="w3-container w3-theme-d4">
@@ -86,13 +85,13 @@
       </footer>
    </div>
 
-   <div  id="adv-pnl" class="panel panel-primary" ng-show="main.show.advance">
-      <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center"
-              ng-class="main.setChildClass(child.item)" ng-bind-html="main.setChildPrompt(child)" style="display:block; width:298px;">
+   <div  id="adv-pnl" class="panel w3-card-4 panel-primary" ng-show="main.show.advance">
+      <button ng-repeat="child in main.scene.children" ng-click="main.loadChild(child)" class="w3-button w3-btn text-center {{main.textScale}}"
+              ng-class="main.setChildClass(child.item)" ng-bind-html="main.setChildPrompt(child)" style="display:block; width:298px; white-space:normal;">
       </button>
    </div>
 
-   <div id="inv-pnl" class="panel panel-primary" ng-show="main.show.inventory">
+   <div id="inv-pnl" class="panel w3-card-4 panel-primary" ng-show="main.show.inventory">
       <div class="container" style="width:300px !important;">
          <div class="row">
             <div class="col-xs-4" ng-repeat="(item, value) in main.inventory" ng-show="value" ng-bind="item"></div>
@@ -100,7 +99,7 @@
       </div>
    </div>
 
-   <div class="panel-group footer" >
+   <div class="panel-group w3-card-4 footer" >
       <div class="panel panel-default">
          <div class="panel-heading w3-theme">
             <h3 class="panel-title">

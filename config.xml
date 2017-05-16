@@ -2,7 +2,7 @@
 <widget id="com.aqan.tboj" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
     <name>A Quest About Nothing: The Blade of Justice</name>
     <description>
-        An interactive story adventure following the hard gritted bounty hunter's, Amabo Karrab, quest for the rogue vigilante The Blade of Justice. 
+        An interactive story adventure following the hard gritted bounty hunter's, Amabo Karrab, quest for the rogue vigilante The Blade of Justice.
     </description>
     <author email="david.levinson@poemojo.com" href="http://davidplevinson.com">
         David Levinson,
@@ -17,7 +17,6 @@
     <preference name="stay-in-webview" value="false" />
     <content src="index.html" />
     <access origin="*" />
-   <plugin name="cordova-plugin-inappbrowser" />
     <plugin name="cordova-plugin-whitelist" />
-    <allow-navigation href="*" />
+    <allow-navigation href="https://api.twitter.com/1.1/*" />
 </widget>

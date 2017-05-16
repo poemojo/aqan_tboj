@@ -84,7 +84,9 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
    {
       var scene = $cookies.get("aqan-tboj-scene");
 
-      var myScroll = new IScroll('#sceneImage', {scrollX: true});
+      setTimeout(function(){imgScroll = new IScroll('#sceneImage', {scrollX: true});}, 100);
+      setTimeout(function(){advScroll = new IScroll('#adv-pnl', {scrollX: false});}, 200);
+ 
 
       if (scene !== undefined)
       {
@@ -200,6 +202,7 @@ storyController.controller('MainController', ['$http', '$cookies', 'StoryScene',
             "statuses_update",
             params,
             function (reply, rate, err) {
+               console.log(reply);
             }
         );
 
